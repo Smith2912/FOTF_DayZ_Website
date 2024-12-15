@@ -4,9 +4,10 @@
 }
 
 body {
-    background-image: url('C:/Users/theso/OneDrive/Desktop/FOTF_DayZ_Website/images/test.png');
+    background-image: url('../images/test.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     font-family: 'Blood Crow', sans-serif;
     color: #fff;
     padding-top: 60px;

@@ -1,0 +1,49 @@
+body {
+    background-image: url('../images/test.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Blood Crow', sans-serif;
+    color: #fff;
+    padding-top: 60px;
+    background-attachment: fixed;
+}
+
+h1, h2 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 48px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+}
+
+h3, h4, h5, h6 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 32px;
+    color: rgb(132, 0, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 3px #fff;
+    animation: glow 1.5s infinite alternate;
+}
+
+p, .additional-info p {
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+    font-family: 'Blood Crow', sans-serif;
+    margin: 15px 0;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgb(201, 171, 0);
+}

@@ -1,0 +1,23 @@
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgb(201, 171, 0), 0 0 30px rgb(201, 171, 0), 0 0 40px rgb(201, 171, 0); }
+    to { text-shadow: 0 0 20px rgb(201, 171, 0), 0 0 30px rgb(201, 171, 0), 0 0 40px rgb(201, 171, 0); }
+}
+
+@keyframes pulseGlow {
+    from {
+        box-shadow: 0 0 10px rgba(132, 0, 255, 0.5), 0 0 20px rgba(132, 0, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(132, 0, 255, 1), 0 0 40px rgba(132, 0, 255, 1);
+    }
+}

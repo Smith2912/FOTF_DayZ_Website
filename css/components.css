@@ -11,6 +11,7 @@
     border: none;
     cursor: pointer;
     animation: blink 1s infinite;
+    will-change: transform, box-shadow;
 }
 
 .discord-button:hover {
@@ -31,10 +32,56 @@
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    will-change: transform, box-shadow;
 }
 
 .navbar button:hover {
     background-color: rgb(201, 171, 0);
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-button {
+    background-color: rgb(132, 0, 255);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.dropdown-button:hover {
+    background-color: rgb(201, 171, 0);
 }

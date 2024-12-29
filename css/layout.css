@@ -172,8 +172,8 @@
     }
 
     .slideshow-image {
-        width: 100%;
-        max-width: 100%;
+        width: auto;
+        max-width: auto;
         height: auto;
     }
 

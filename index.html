@@ -64,26 +64,15 @@
     </div>
     <div class="Battle Metrics center-text battle-metrics-container additional-info">
         <h2>Battle Metrics</h2>
-        <p>
-            <script type="application/javascript">
-                window.addEventListener('message', function(e) {
-                    if (e.data.uid && e.data.type === 'sizeUpdate') {
-                        var i = document.querySelector('iframe[name="' + e.data.uid + '"]');
-                        i.style.width = e.data.payload.width;
-                        i.style.height = e.data.payload.height;
-                    }
-                });
-
-                window.addEventListener('resize', function() {
-                    var iframe = document.querySelector('iframe[name="fhmni"]');
-                    if (iframe) {
-                        iframe.style.width = '100%';
-                        iframe.style.height = 'auto';
-                    }
-                });
-            </script>
-            <iframe src="https://cdn.battlemetrics.com/b/horizontal500x80px/29479433.html?foreground=%23EEEEEE&background=%23222222&lines=%23333333&linkColor=%231185ec&chartColor=%23FF0700" frameborder="0" style="border:0; width: 100%; height: auto;" name="fhmni"></iframe>
-        </p>
+        <div class="battlemetrics-wrapper">
+            <iframe 
+                src="https://cdn.battlemetrics.com/b/horizontal500x80px/29479433.html?foreground=%23EEEEEE&background=%23222222&lines=%23333333&linkColor=%231185ec&chartColor=%23FF0700" 
+                frameborder="0"
+                scrolling="no"
+                style="width: 100%; height: 80px;"
+                name="fhmni">
+            </iframe>
+        </div>
     </div>
     <div class="audio-player top-right">
         <audio id="background-audio" controls autoplay muted>
@@ -113,6 +102,20 @@
             slides[slideIndex-1].classList.add("active"); // Add active class
             setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
+
+        function resizeBattleMetrics() {
+            const wrapper = document.querySelector('.battlemetrics-wrapper');
+            if (wrapper) {
+                const width = wrapper.offsetWidth;
+                const iframe = wrapper.querySelector('iframe');
+                if (iframe) {
+                    iframe.style.width = width + 'px';
+                }
+            }
+        }
+
+        window.addEventListener('resize', resizeBattleMetrics);
+        window.addEventListener('load', resizeBattleMetrics);
     </script>
     <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; background-color: #000000; padding: 10px;">
         Website Created By: The Songsmith

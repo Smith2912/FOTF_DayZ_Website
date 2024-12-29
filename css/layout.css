@@ -15,6 +15,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     max-width: 500px;
     margin: 20px auto;
+    overflow: hidden;
+}
+
+.battle-metrics-container iframe {
+    width: 100% !important;
+    min-height: 80px;
+    border: none;
 }
 
 .top-right {
@@ -98,6 +105,13 @@
     margin: 0 auto;
 }
 
+.additional-info img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -116,7 +130,9 @@
     }
 
     .battle-metrics-container {
+        max-width: 100%;
         margin: 10px;
+        padding: 10px;
     }
 
     .center-discordlogo {
@@ -132,5 +148,10 @@
         position: static;
         margin: 10px auto;
         width: 90%;
+    }
+
+    .additional-info img {
+        width: 100%;
+        max-width: 300px;
     }
 }

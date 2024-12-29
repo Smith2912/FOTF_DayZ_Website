@@ -148,7 +148,7 @@
     }
 
     .nav-links {
-        display: none; /* Hide by default */
+        display: none;
     }
 
     .navbar a {

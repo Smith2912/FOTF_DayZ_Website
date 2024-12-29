@@ -90,20 +90,19 @@
 
 @media screen and (max-width: 768px) {
     .navbar {
-        padding: 5px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar a {
-        width: 100%;
-        display: block;
+        width: 90%;
         margin: 5px 0;
     }
 
     .navbar button,
     .dropdown-button {
-        width: 100%;
-        margin: 2px 0;
-        padding: 12px 15px;
+        width: auto;
+        padding: 10px 20px;
         font-size: 16px;
     }
 
@@ -113,9 +112,8 @@
     }
 
     .dropdown-content {
-        width: 100%;
-        position: static;
-        display: none;
+        position: relative;
+        width: 90%;
     }
 
     .dropdown:hover .dropdown-content {

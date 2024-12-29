@@ -88,26 +88,45 @@
 
 /* Add these mobile-specific styles */
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 5px;
+    }
+
+    .navbar a {
+        width: 100%;
+        display: block;
+        margin: 5px 0;
+    }
+
     .navbar button,
     .dropdown-button {
         width: 100%;
-        margin: 5px 0;
-        padding: 10px 15px;
+        margin: 2px 0;
+        padding: 12px 15px;
         font-size: 16px;
     }
 
     .dropdown {
         width: 100%;
+        margin: 5px 0;
     }
 
     .dropdown-content {
         width: 100%;
-        position: relative;
+        position: static;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 10px;
+        text-align: center;
     }
 
     .discord-button {
-        width: 100%;
-        font-size: 20px;
-        padding: 10px 20px;
+        width: 90%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px auto;
     }
 }

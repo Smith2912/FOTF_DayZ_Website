@@ -51,19 +51,24 @@ a:hover {
 /* Add these mobile-specific styles */
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 200px; /* Increased padding to account for wrapped navbar */
+        padding-top: 280px;
+        font-size: 16px;
     }
 
     h1, h2 {
-        font-size: 32px;
+        font-size: 28px;
+        margin: 10px 0;
     }
 
     h3, h4, h5, h6 {
-        font-size: 24px;
+        font-size: 22px;
+        margin: 8px 0;
     }
 
     p, .additional-info p {
-        font-size: 18px;
+        font-size: 16px;
         padding: 8px;
+        margin: 8px 0;
+        line-height: 1.4;
     }
 }

@@ -95,15 +95,15 @@
     }
 
     .navbar a {
-        width: 90%;
+        width: 80%;
         margin: 5px 0;
     }
 
     .navbar button,
     .dropdown-button {
         width: auto;
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
     .dropdown {
@@ -113,7 +113,7 @@
 
     .dropdown-content {
         position: relative;
-        width: 90%;
+        width: 80%;
     }
 
     .dropdown:hover .dropdown-content {

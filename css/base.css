@@ -47,3 +47,23 @@ a {
 a:hover {
     color: rgb(201, 171, 0);
 }
+
+/* Add these mobile-specific styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 200px; /* Increased padding to account for wrapped navbar */
+    }
+
+    h1, h2 {
+        font-size: 32px;
+    }
+
+    h3, h4, h5, h6 {
+        font-size: 24px;
+    }
+
+    p, .additional-info p {
+        font-size: 18px;
+        padding: 8px;
+    }
+}

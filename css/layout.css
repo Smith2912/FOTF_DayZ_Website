@@ -39,6 +39,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .logo-container {
@@ -46,8 +47,13 @@
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 100%;
     padding: 20px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
 }
 
 .slideshow-image {
@@ -90,4 +96,41 @@
     border: 2px solid rgb(132, 0, 255);
     max-width: 800px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .content {
+        margin: 20px 10px;
+        padding: 10px;
+    }
+
+    .additional-info {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .battle-metrics-container {
+        margin: 10px;
+    }
+
+    .center-discordlogo {
+        width: 30%;
+    }
+
+    .audio-player {
+        position: static;
+        margin: 10px auto;
+    }
+
+    .top-right {
+        position: static;
+        margin: 10px auto;
+        width: 90%;
+    }
 }

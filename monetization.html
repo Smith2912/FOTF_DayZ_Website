@@ -11,21 +11,83 @@
     <title>Monetization</title>
     </head>
 <body>
-    <div class="navbar">
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html"><button>Home</button></a>
-            <a href="about.html"><button>About Us</button></a>
-            <a href="merch.html"><button>Merch</button></a>
-            <div class="dropdown">
-                <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
-                <div class="dropdown-content">
-                    <a href="donation-info.html">Donation Info</a>
+    <header>
+        <div class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html"><button>Home</button></a>
+                <a href="about.html"><button>About Us</button></a>
+                <a href="merch.html"><button>Merch</button></a>
+                <div class="dropdown">
+                    <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
+                    <div class="dropdown-content">
+                        <a href="donation-info.html">Donation Info</a>
+                    </div>
                 </div>
+                <a href="staffapplication.html"><button>Staff Application</button></a>
             </div>
-            <a href="staffapplication.html"><button>Staff Application</button></a>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="logo-container">
+            <img src="images/fotflogo.png" alt="Logo" class="logo lazyload" data-src="images/fotflogo.png">
+        </div>
+        <div class="content">
+            <h1>Monetization Plan</h1>
+            <div class="additional-info">
+                <p>
+                    THE FOLLOWING OUTLINES THE FUSION OF THE FORBIDDEN'S PLANS FOR MONETIZING THE GAME DEVELOPED BY BOHEMIA INTERACTIVE, TITLED DAYZ.
+                </p>
+                <p>
+                    ALL ITEMS LISTED BELOW ARE AVAILABLE IN-GAME VIA TRADER OR AS LOOT TO ALL PARTICIPANTS, REGARDLESS OF DONATION STATUS.
+                </p>
+                <p>
+                    BELOW YOU WILL FIND DETAILED INFORMATION GUIDING YOU THROUGH THE PROCESS OF OBTAINING THE AMAZING PERKS AVAILABLE ON ALL OF THE FUSION OF THE FORBIDDEN SERVERS!
+                </p>
+            </div>
+            <div class="additional-info">
+                <div class="tier-image">
+                    <img src="images/Tier1.gif" alt="Tier 1 Image" style="max-width: 100%; height: auto;" />
+                </div>
+                <p>
+                    Tier 1 Description
+                </p>
+            </div>
+            <div class="additional-info">
+                <div class="tier-image">
+                    <img src="images/Tier2.gif" alt="Tier 2 Image" style="max-width: 100%; height: auto;" />
+                </div>
+                <p>
+                    Tier 2 Description
+                </p>
+            </div>
+            <div class="additional-info">
+                <div class="tier-image">
+                    <img src="images/Tier3.gif" alt="Tier 3 Image" style="max-width: 100%; height: auto;" />
+                </div>
+                <p>
+                    Tier 3 Description
+                </p>
+            </div>
+            <div class="additional-info">
+                <p>
+                    Every contribution made is fully reinvested into The Fusion Of The Forbidden, covering monthly server expenses, advertising, and future enhancements. We stand against "pay to win" practices, so we do not provide any overpowered or game-breaking perks for contributors on our servers.
+                </p>
+                <p>
+                    All contributions are non-refundable and are solely used to support server objectives. By contributing, you agree to our terms of service and waive any PayPal disputes. All transactions are final upon completion.
+                </p>
+                <p>
+                    Due to monetization restrictions, we do not offer priority queues. The Fusion Of The Forbidden is approved by esteemed mod and map developers for monetization purposes.
+                </p>
+                <p>
+                    We will not offer any items or packages beyond those listed above under any circumstances. We oppose pay-to-win schemes or any form of payment for advantage, even in games without monetization rules.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer style="position: relative; width: 100%; text-align: center; background-color: #000000; padding: 10px; margin-top: 20px;">
+        Website Created By: The Songsmith
+    </footer>
     <script>
         function toggleMenu() {
             var navLinks = document.getElementById("navLinks");
@@ -51,64 +113,23 @@
                 navLinks.style.display = "flex";
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll("img.lazyload");
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.dataset.src;
+                        image.classList.remove("lazyload");
+                        imageObserver.unobserve(image);
+                    }
+                });
+            });
+            lazyImages.forEach(image => {
+                imageObserver.observe(image);
+            });
+        });
     </script>
-    <div class="logo-container">
-        <img src="images/fotflogo.png" alt="Logo" class="logo">
-    </div>
-    <div class="content">
-        <h1>Monetization Plan</h1>
-        <div class="additional-info">
-            <p>
-                THE FOLLOWING OUTLINES THE FUSION OF THE FORBIDDEN'S PLANS FOR MONETIZING THE GAME DEVELOPED BY BOHEMIA INTERACTIVE, TITLED DAYZ.
-            </p>
-            <p>
-                ALL ITEMS LISTED BELOW ARE AVAILABLE IN-GAME VIA TRADER OR AS LOOT TO ALL PARTICIPANTS, REGARDLESS OF DONATION STATUS.
-            </p>
-            <p>
-                BELOW YOU WILL FIND DETAILED INFORMATION GUIDING YOU THROUGH THE PROCESS OF OBTAINING THE AMAZING PERKS AVAILABLE ON ALL OF THE FUSION OF THE FORBIDDEN SERVERS!
-            </p>
-        </div>
-        <div class="additional-info">
-            <div class="tier-image">
-                <img src="images/Tier1.gif" alt="Tier 1 Image" style="max-width: 100%; height: auto;" />
-            </div>
-            <p>
-                Tier 1 Description
-            </p>
-        </div>
-        <div class="additional-info">
-            <div class="tier-image">
-                <img src="images/Tier2.gif" alt="Tier 2 Image" style="max-width: 100%; height: auto;" />
-            </div>
-            <p>
-                Tier 2 Description
-            </p>
-        </div>
-        <div class="additional-info">
-            <div class="tier-image">
-                <img src="images/Tier3.gif" alt="Tier 3 Image" style="max-width: 100%; height: auto;" />
-            </div>
-            <p>
-                Tier 3 Description
-            </p>
-        </div>
-        <div class="additional-info">
-            <p>
-                Every contribution made is fully reinvested into The Fusion Of The Forbidden, covering monthly server expenses, advertising, and future enhancements. We stand against "pay to win" practices, so we do not provide any overpowered or game-breaking perks for contributors on our servers.
-            </p>
-            <p>
-                All contributions are non-refundable and are solely used to support server objectives. By contributing, you agree to our terms of service and waive any PayPal disputes. All transactions are final upon completion.
-            </p>
-            <p>
-                Due to monetization restrictions, we do not offer priority queues. The Fusion Of The Forbidden is approved by esteemed mod and map developers for monetization purposes.
-            </p>
-            <p>
-                We will not offer any items or packages beyond those listed above under any circumstances. We oppose pay-to-win schemes or any form of payment for advantage, even in games without monetization rules.
-            </p>
-        </div>
-    </div>
-    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; background-color: #000000; padding: 10px;">
-        Website Created By: The Songsmith
-    </footer>
 </body>
 </html>

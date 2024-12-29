@@ -11,21 +11,32 @@
     <title>DayZ</title>
     </head>
 <body>
-    <div class="navbar">
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html"><button>Home</button></a>
-            <a href="about.html"><button>About Us</button></a>
-            <a href="merch.html"><button>Merch</button></a>
-            <div class="dropdown">
-                <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
-                <div class="dropdown-content">
-                    <a href="donation-info.html">Donation Info</a>
+    <header>
+        <div class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html"><button>Home</button></a>
+                <a href="about.html"><button>About Us</button></a>
+                <a href="merch.html"><button>Merch</button></a>
+                <div class="dropdown">
+                    <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
+                    <div class="dropdown-content">
+                        <a href="donation-info.html">Donation Info</a>
+                    </div>
                 </div>
+                <a href="staffapplication.html"><button>Staff Application</button></a>
             </div>
-            <a href="staffapplication.html"><button>Staff Application</button></a>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="logo-container">
+            <img src="images/fotflogo.png" alt="Logo" class="logo lazyload" data-src="images/fotflogo.png">
+        </div>
+        <!-- Additional content -->
+    </main>
+    <footer style="position: relative; width: 100%; text-align: center; background-color: #000000; padding: 10px; margin-top: 20px;">
+        Website Created By: The Songsmith
+    </footer>
     <script>
         function toggleMenu() {
             var navLinks = document.getElementById("navLinks");
@@ -51,9 +62,23 @@
                 navLinks.style.display = "flex";
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll("img.lazyload");
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.dataset.src;
+                        image.classList.remove("lazyload");
+                        imageObserver.unobserve(image);
+                    }
+                });
+            });
+            lazyImages.forEach(image => {
+                imageObserver.observe(image);
+            });
+        });
     </script>
-    <div class="logo-container">
-        <img src="C:/Users/theso/OneDrive/Desktop/FOTF_DayZ_Website/images/fotflogo.png" alt="Logo" class="logo">
-    </div>
 </body>
 </html>

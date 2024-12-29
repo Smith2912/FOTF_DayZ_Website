@@ -5,94 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
     <title>Donation Info</title>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html"><button>Home</button></a>
-                <a href="about.html"><button>About Us</button></a>
-                <a href="merch.html"><button>Merch</button></a>
-                <div class="dropdown">
-                    <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
-                    <div class="dropdown-content">
-                        <a href="donation-info.html">Donation Info</a>
-                    </div>
-                </div>
-                <a href="staffapplication.html"><button>Staff Application</button></a>
+    <div class="navbar">
+        <a href="index.html"><button>Home</button></a>
+        <a href="about.html"><button>About Us</button></a>
+        <a href="merch.html"><button>Merch</button></a>
+        <div class="dropdown">
+            <button class="dropdown-button">Monetization</button>
+            <div class="dropdown-content">
+                <a href="monetization.html">Monetization</a>
+                <a href="donation-info.html">Donation Info</a>
             </div>
         </div>
-    </header>
-    <main>
-        <div class="logo-container">
-            <img src="images/fotflogo.png" alt="Logo" class="logo lazyload" data-src="images/fotflogo.png">
+        <a href="staffapplication.html"><button>Staff Application</button></a>
+    </div>
+    <div class="content">
+        <h2>Forbidden Donation Kits:</h2>
+        <div class="additional-info">
+            <p>
+                Forbidden Kits may be claimed on all Fusion Of The Forbidden server.
+            </p>
+            <p>
+                Forbidden Kits are for life on all Fusion Of The Forbidden server.
+            </p>
+            <p>
+                Players will refrain from trading, selling, or giving away any Forbidden Kits or its included items.
+            </p>
+            <p>
+                Forbidden Kits may be replaced upon loss of kit (i.e., theft, loss of bodybag, or any bugs that may occur).
+            </p>
         </div>
-        <div class="content">
-            <h2>Forbidden Donation Kits:</h2>
-            <div class="additional-info">
-                <p>
-                    Forbidden Kits may be claimed on all Fusion Of The Forbidden server.
-                </p>
-                <p>
-                    Forbidden Kits are for life on all Fusion Of The Forbidden server.
-                </p>
-                <p>
-                    Players will refrain from trading, selling, or giving away any Forbidden Kits or its included items.
-                </p>
-                <p>
-                    Forbidden Kits may be replaced upon loss of kit (i.e., theft, loss of bodybag, or any bugs that may occur).
-                </p>
-            </div>
-        </div>
-    </main>
-    <footer style="position: relative; width: 100%; text-align: center; background-color: #000000; padding: 10px; margin-top: 20px;">
+    </div>
+    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; background-color: #000000; padding: 10px;">
         Website Created By: The Songsmith
     </footer>
-    <script>
-        function toggleMenu() {
-            var navLinks = document.getElementById("navLinks");
-            if (navLinks.style.display === "block") {
-                navLinks.style.display = "none";
-            } else {
-                navLinks.style.display = "block";
-            }
-        }
-
-        window.addEventListener('resize', function() {
-            var navLinks = document.getElementById("navLinks");
-            if (window.innerWidth > 768) {
-                navLinks.style.display = "flex";
-            } else {
-                navLinks.style.display = "none";
-            }
-        });
-
-        window.addEventListener('load', function() {
-            var navLinks = document.getElementById("navLinks");
-            if (window.innerWidth > 768) {
-                navLinks.style.display = "flex";
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = document.querySelectorAll("img.lazyload");
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const image = entry.target;
-                        image.src = image.dataset.src;
-                        image.classList.remove("lazyload");
-                        imageObserver.unobserve(image);
-                    }
-                });
-            });
-            lazyImages.forEach(image => {
-                imageObserver.observe(image);
-            });
-        });
-    </script>
 </body>
 </html>

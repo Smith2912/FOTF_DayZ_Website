@@ -15,6 +15,7 @@
             height: 400px;
             margin-bottom: 20px;
             overflow: hidden;
+            perspective: 1000px;
         }
         .slideshow-image {
             position: absolute;
@@ -24,10 +25,16 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 3s ease-in-out;
+            backface-visibility: hidden;
+            transform: rotateY(0deg);
+            transition: transform 1s, opacity 1s ease-in-out;
         }
         .slideshow-image.active {
             opacity: 1;
+            transform: rotateY(0deg);
+        }
+        .slideshow-image.previous {
+            transform: rotateY(-180deg);
         }
         .slideshow-container.additional-info {
             padding: 0;
@@ -112,11 +119,16 @@
             let i;
             let slides = document.getElementsByClassName("slideshow-image");
             for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active"); // Remove active class
+                slides[i].classList.remove("active", "previous");
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].classList.add("active"); // Add active class
+            slides[slideIndex-1].classList.add("active");
+            if (slideIndex > 1) {
+                slides[slideIndex-2].classList.add("previous");
+            } else {
+                slides[slides.length-1].classList.add("previous");
+            }
             setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
 

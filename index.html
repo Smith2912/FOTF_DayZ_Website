@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="css/animations.css">
     <title>Welcome to The Fusion Of The Forbidden Gaming Community</title>
         <style>
+        .slideshow-container {
+            position: relative;
+        }
         .slideshow-image {
-            display: none;
-            transition: opacity 3s ease-in-out; /* Add transition effect */
-            opacity: 0; /* Start with opacity 0 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
         }
         .slideshow-image.active {
-            display: block;
-            opacity: 1; /* Fade in to opacity 1 */
+            opacity: 1;
         }
     </style>
 </head>

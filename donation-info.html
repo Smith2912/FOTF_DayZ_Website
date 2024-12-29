@@ -12,17 +12,30 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html"><button>Home</button></a>
-        <a href="about.html"><button>About Us</button></a>
-        <a href="merch.html"><button>Merch</button></a>
-        <div class="dropdown">
-            <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
-            <div class="dropdown-content">
-                <a href="donation-info.html">Donation Info</a>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html"><button>Home</button></a>
+            <a href="about.html"><button>About Us</button></a>
+            <a href="merch.html"><button>Merch</button></a>
+            <div class="dropdown">
+                <a href="monetization.html"><button class="dropdown-button">Monetization</button></a>
+                <div class="dropdown-content">
+                    <a href="donation-info.html">Donation Info</a>
+                </div>
             </div>
+            <a href="staffapplication.html"><button>Staff Application</button></a>
         </div>
-        <a href="staffapplication.html"><button>Staff Application</button></a>
     </div>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "block";
+            }
+        }
+    </script>
     <div class="content">
         <h2>Forbidden Donation Kits:</h2>
         <div class="additional-info">

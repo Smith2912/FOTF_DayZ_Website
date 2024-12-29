@@ -46,17 +46,30 @@
     display: inline-block;
 }
 
+.dropdown-button {
+    background-color: rgb(132, 0, 255);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 1px solid;
+    border-image: linear-gradient(to right, rgb(132, 0, 255), rgb(201, 171, 0)) 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: rgba(0, 0, 0, 0.9);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 1000;
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -64,29 +77,17 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(201, 171, 0, 0.5);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-button {
-    background-color: rgb(132, 0, 255);
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-}
-
 .dropdown-button:hover {
     background-color: rgb(201, 171, 0);
 }
 
-/* Add these mobile-specific styles */
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 5px;
@@ -114,19 +115,17 @@
     .dropdown-content {
         width: 100%;
         position: static;
-        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 
     .dropdown-content a {
         color: white;
         padding: 10px;
         text-align: center;
-    }
-
-    .discord-button {
-        width: 90%;
-        font-size: 18px;
-        padding: 10px;
-        margin: 10px auto;
+        background-color: rgba(132, 0, 255, 0.5);
     }
 }

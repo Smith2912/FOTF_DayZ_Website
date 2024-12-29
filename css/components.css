@@ -20,25 +20,30 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
 .navbar button {
     background-color: rgb(132, 0, 255);
     color: #fff;
     border: 1px solid;
     border-image: linear-gradient(to right, rgb(132, 0, 255), rgb(201, 171, 0)) 1;
-    padding: 15px 30px;
+    padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    will-change: transform, box-shadow;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar button:hover {
     background-color: rgb(201, 171, 0);
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown {
@@ -102,6 +107,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (min-width: 769px) {
+    .nav-links {
+        flex-direction: row;
+    }
 }
 
 @media screen and (max-width: 768px) {

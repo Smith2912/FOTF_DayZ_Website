@@ -38,4 +38,7 @@ function resizeBattleMetrics() {
 
 window.addEventListener('resize', resizeBattleMetrics);
 window.addEventListener('load', resizeBattleMetrics);
-window.addEventListener("beforeunload", this.onUnloadBinded); 
+window.addEventListener("beforeunload", function(event) {
+    // Perform necessary actions
+    // event.returnValue = ''; // Uncomment if you need to prompt the user
+}); 

@@ -4,7 +4,7 @@ async function fetchPrintfulProducts() {
         const response = await fetch('https://api.printful.com/store/products', {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer zRK22VCAhBiWanqQzO5uVspwnigqlaxbFUgdGViTRCHtrJsJPYfKk5lDQIx7YHcU',
+                'Authorization': 'Bearer Tw8zYt5zspLYc22WifHhqtOV3FuznsIF4QcjvgFC',
                 'Content-Type': 'application/json'
             }
         });

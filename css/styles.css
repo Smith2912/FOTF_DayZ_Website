@@ -37,4 +37,10 @@
 .slideshow-container.additional-info {
     padding: 0;
     margin: 20px;
+}
+
+.center-discordlogo {
+    display: block;
+    margin: 0 auto;
+    width: 10%;
 } 

@@ -1,23 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Audio setup
     var audio = document.getElementById('background-audio');
-    audio.volume = 0.1;
-    audio.muted = false;
+    if (audio) {
+        audio.volume = 0.1;
+        audio.muted = false;
+    }
 
+    // Slideshow setup
     let slideIndex = 0;
-    showSlides();
+    const slides = document.getElementsByClassName("slideshow-image");
+    
+    if (slides.length > 0) {
+        showSlides();
+    }
 
     function showSlides() {
-        let slides = document.getElementsByClassName("slideshow-image");
+        // Hide all slides
         for (let i = 0; i < slides.length; i++) {
             slides[i].classList.remove("active");
         }
+        
+        // Move to next slide
         slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        
+        // Show current slide
         slides[slideIndex - 1].classList.add("active");
-        setTimeout(showSlides, 5000); // Change image every 5 seconds
+        
+        // Call showSlides again after 5 seconds
+        setTimeout(showSlides, 5000);
     }
 });
 
+// BattleMetrics resize function
 function resizeBattleMetrics() {
     const wrapper = document.querySelector('.battlemetrics-wrapper');
     if (wrapper) {

@@ -40,7 +40,7 @@ function displayProducts(products) {
         return;
     }
 
-    products.forEach(product => {
+    products.forEach((product, index) => {
         const productElement = document.createElement('div');
         productElement.className = 'product';
         
@@ -51,9 +51,20 @@ function displayProducts(products) {
             <h2>${product.name || 'Untitled Product'}</h2>
             <img src="${product.thumbnail_url || 'placeholder.jpg'}" alt="${product.name || 'Product Image'}">
             <p>Price: ${price}</p>
-            <button onclick="window.open('${product.external_url || '#'}', '_blank')">Buy Now</button>
+            <button class="buy-button" data-url="${product.external_url || '#'}" data-product-index="${index}">Buy Now</button>
         `;
         merchStore.appendChild(productElement);
+    });
+
+    // Add event listeners to all buy buttons
+    const buyButtons = document.querySelectorAll('.buy-button');
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            if (url && url !== '#') {
+                window.open(url, '_blank');
+            }
+        });
     });
 }
 

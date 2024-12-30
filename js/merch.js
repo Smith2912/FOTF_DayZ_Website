@@ -1,5 +1,6 @@
 async function fetchPrintfulProducts() {
     try {
+        console.log('Fetching products...'); // Debug log
         const response = await fetch('https://api.printful.com/store/products', {
             method: 'GET',
             headers: {
@@ -8,20 +9,25 @@ async function fetchPrintfulProducts() {
             }
         });
 
+        console.log('Response status:', response.status); // Debug log
+        const data = await response.json();
+        console.log('Response data:', data); // Debug log
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
         if (data.result) {
             displayProducts(data.result);
         } else {
             console.error('No products found in response:', data);
+            const merchStore = document.getElementById('merch-store');
+            merchStore.innerHTML = '<p style="color: white;">No products available at this time.</p>';
         }
     } catch (error) {
         console.error('Error fetching products:', error);
         const merchStore = document.getElementById('merch-store');
-        merchStore.innerHTML = '<p>Unable to load products at this time. Please try again later.</p>';
+        merchStore.innerHTML = '<p style="color: white;">Unable to load products at this time. Please try again later.</p>';
     }
 }
 

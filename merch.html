@@ -9,8 +9,8 @@
         default-src 'self'; 
         script-src 'self' https://static.cloudflareinsights.com https://www.youtube.com; 
         style-src 'self'; 
-        img-src 'self' data:; 
-        connect-src 'self' https://adtonus.com; 
+        img-src 'self' data: https://api.printful.com https://*.printful.com; 
+        connect-src 'self' https://adtonus.com https://api.printful.com; 
         frame-src 'self' https://www.youtube.com https://cdn.battlemetrics.com;
     ">
     <link rel="stylesheet" href="css/fonts.css">
@@ -40,8 +40,9 @@
     </div>
     <div class="content">
         <h1>Merch</h1>
-        <div id="merch-store">
+        <div id="merch-store" style="min-height: 200px;">
             <!-- Products will be dynamically inserted here -->
+            <p style="color: white;">Loading products...</p>
         </div>
     </div>
     <footer class="footer-style">

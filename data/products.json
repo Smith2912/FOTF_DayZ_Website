@@ -7,16 +7,16 @@
             "external_url": "https://fotf.printful.me/product/fotf-beanie"
         },
         {
-            "name": "FOTF Hoodie",
-            "thumbnail_url": "images/merch/hoodie.png",
-            "retail_price": "49.99",
-            "external_url": "#"
+            "name": "FOTF Cap",
+            "thumbnail_url": "images/merch/FOTF_Cap.png",
+            "retail_price": "27.00",
+            "external_url": "https://fotf.printful.me/product/fotf-cap"
         },
         {
-            "name": "FOTF Cap",
-            "thumbnail_url": "images/merch/cap.png",
-            "retail_price": "24.99",
-            "external_url": "#"
+            "name": "FOTF Snapback",
+            "thumbnail_url": "images/merch/FOTF_Snapback.png",
+            "retail_price": "30.00",
+            "external_url": "https://fotf.printful.me/product/fotf-snapback-hat"
         }
     ]
 } 

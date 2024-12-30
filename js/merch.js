@@ -22,12 +22,12 @@ async function fetchPrintfulProducts() {
         } else {
             console.error('No products found in response:', data);
             const merchStore = document.getElementById('merch-store');
-            merchStore.innerHTML = '<p style="color: white;">No products available at this time.</p>';
+            merchStore.innerHTML = '<p class="no-products-text">No products available at this time.</p>';
         }
     } catch (error) {
         console.error('Error fetching products:', error);
         const merchStore = document.getElementById('merch-store');
-        merchStore.innerHTML = '<p style="color: white;">Unable to load products at this time. Please try again later.</p>';
+        merchStore.innerHTML = '<p class="error-text">Unable to load products at this time. Please try again later.</p>';
     }
 }
 
@@ -36,7 +36,7 @@ function displayProducts(products) {
     merchStore.innerHTML = ''; // Clear existing content
 
     if (!products.length) {
-        merchStore.innerHTML = '<p>No products available at this time.</p>';
+        merchStore.innerHTML = '<p class="no-products-text">No products available at this time.</p>';
         return;
     }
 

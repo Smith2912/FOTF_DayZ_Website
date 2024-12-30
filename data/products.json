@@ -1,0 +1,22 @@
+{
+    "result": [
+        {
+            "name": "FOTF T-Shirt",
+            "thumbnail_url": "images/merch/tshirt.jpg",
+            "retail_price": "29.99",
+            "external_url": "#"
+        },
+        {
+            "name": "FOTF Hoodie",
+            "thumbnail_url": "images/merch/hoodie.jpg",
+            "retail_price": "49.99",
+            "external_url": "#"
+        },
+        {
+            "name": "FOTF Cap",
+            "thumbnail_url": "images/merch/cap.jpg",
+            "retail_price": "24.99",
+            "external_url": "#"
+        }
+    ]
+} 

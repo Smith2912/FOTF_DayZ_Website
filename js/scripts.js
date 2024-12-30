@@ -7,31 +7,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Slideshow setup
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slideshow-image");
-    
-    if (slides.length > 0) {
-        showSlides();
+    function initSlideshow() {
+        console.log('Initializing slideshow...'); // Debug log
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slideshow-image");
+        console.log('Found ' + slides.length + ' slides'); // Debug log
+
+        if (slides.length > 0) {
+            showSlides();
+        }
+
+        function showSlides() {
+            console.log('Showing slide ' + (slideIndex + 1)); // Debug log
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Move to next slide
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            
+            // Show current slide
+            slides[slideIndex].classList.add("active");
+            
+            // Call showSlides again after 5 seconds
+            setTimeout(showSlides, 5000);
+        }
     }
 
-    function showSlides() {
-        // Hide all slides
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
-        
-        // Move to next slide
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        
-        // Show current slide
-        slides[slideIndex - 1].classList.add("active");
-        
-        // Call showSlides again after 5 seconds
-        setTimeout(showSlides, 5000);
-    }
+    // Initialize slideshow
+    initSlideshow();
 });
 
 // BattleMetrics resize function

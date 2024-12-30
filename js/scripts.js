@@ -9,20 +9,14 @@ let slideIndex = 0;
 showSlides();
 
 function showSlides() {
-    let i;
     let slides = document.getElementsByClassName("slideshow-image");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active", "previous");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].classList.add("active");
-    if (slideIndex > 1) {
-        slides[slideIndex-2].classList.add("previous");
-    } else {
-        slides[slides.length-1].classList.add("previous");
-    }
-    setTimeout(showSlides, 5000);
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].classList.add("active");
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
 
 function resizeBattleMetrics() {

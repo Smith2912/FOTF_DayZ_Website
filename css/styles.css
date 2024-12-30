@@ -6,28 +6,23 @@
 }
 
 .slideshow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    overflow: hidden;
-    width: 100%;
+    position: relative;
     max-width: 800px;
+    overflow: hidden;
 }
 
 .slideshow-image {
     width: 100%;
     height: auto;
-    object-fit: contain;
     opacity: 0;
-    backface-visibility: hidden;
-    transform: rotateY(0deg);
-    transition: transform 2s, opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .slideshow-image.active {
     opacity: 1;
-    transform: rotateY(0deg);
 }
 
 .slideshow-image.previous {

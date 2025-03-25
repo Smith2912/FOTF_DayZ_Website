@@ -1,74 +1,137 @@
+/* Base styles */
+:root {
+    --primary-color: rgb(132, 0, 255);
+    --primary-dark: rgb(100, 0, 200);
+    --text-color: #fff;
+    --background-color: rgba(0, 0, 0, 0.8);
+    --border-radius: 5px;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    --transition-speed: 0.3s;
+}
+
 body {
     background-image: url('../images/test.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Blood Crow', sans-serif;
-    color: #fff;
-    padding-top: 60px;
     background-attachment: fixed;
+    font-family: 'Blood Crow', Arial, sans-serif;
+    color: var(--text-color);
+    padding-top: 60px;
+    margin: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 h1, h2 {
-    font-family: 'Arial Black', sans-serif;
-    font-size: 48px;
     color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     text-align: center;
     animation: glow 1.5s infinite alternate;
 }
 
-h3, h4, h5, h6 {
-    font-family: 'Arial Black', sans-serif;
-    font-size: 32px;
-    color: rgb(132, 0, 255);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 3px #fff;
-    animation: glow 1.5s infinite alternate;
+h1 {
+    font-size: 42px;
 }
 
-p, .additional-info p {
+h2 {
+    font-size: 36px;
+}
+
+h3, h4, h5, h6 {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 3px #fff;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
     font-size: 26px;
-    color: rgb(255, 255, 255);
-    text-shadow: none;
-    font-family: 'Blood Crow', sans-serif;
+}
+
+h5 {
+    font-size: 22px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+/* Paragraphs and text */
+p {
+    font-size: 18px;
+    color: var(--text-color);
     margin: 15px 0;
     line-height: 1.6;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--background-color);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
+/* Links */
 a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-    color: rgb(201, 171, 0);
+    color: var(--primary-color);
 }
 
-/* Add these mobile-specific styles */
+/* Lists */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile styles */
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 280px;
+        padding-top: 60px;
         font-size: 16px;
     }
 
-    h1, h2 {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
         font-size: 28px;
-        margin: 10px 0;
     }
 
-    h3, h4, h5, h6 {
-        font-size: 22px;
-        margin: 8px 0;
+    h3 {
+        font-size: 24px;
     }
 
-    p, .additional-info p {
+    h4, h5, h6 {
+        font-size: 18px;
+    }
+
+    p {
         font-size: 16px;
         padding: 8px;
         margin: 8px 0;
-        line-height: 1.4;
     }
 }

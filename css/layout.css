@@ -114,17 +114,34 @@
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 280px; /* Increased to accommodate the stacked navbar */
+        padding-top: 60px; /* Reduced from 280px which was excessive */
     }
 
     .navbar {
         flex-direction: column;
         align-items: center;
         padding: 5px;
+        position: absolute; /* Changed from fixed to prevent content overlap issues */
+    }
+
+    .navbar a, .navbar .dropdown {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar button, .dropdown-button {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        position: relative;
+        box-shadow: none;
     }
 
     .content {
-        margin: 10px;
+        margin: 70px 10px 10px 10px; /* Added top margin to account for navbar */
         padding: 10px;
         width: auto;
     }
@@ -136,12 +153,13 @@
     }
 
     .logo-container {
-        margin: 10px auto;
+        margin: 70px auto 10px auto; /* Added top margin to avoid navbar overlap */
         padding: 10px;
     }
 
-    .logo-container img {
-        max-width: 80%;
+    .logo-container img, .logo-container iframe {
+        max-width: 100%;
+        height: auto;
     }
 
     .battle-metrics-container {
@@ -166,15 +184,19 @@
         width: 90%;
     }
 
-    .slideshow-container {
-        margin: 10px;
+    .slideshow-wrapper {
         padding: 10px;
+        margin: 10px;
+    }
+
+    .slideshow-container {
+        height: 200px; /* Reduced height for mobile */
     }
 
     .slideshow-image {
-        width: auto;
-        max-width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     footer {
